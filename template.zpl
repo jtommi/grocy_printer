@@ -1,36 +1,37 @@
 ^XA
-^CI28
 
-^FX This is the barcode
-^FO10,17
-^BXN,3,200
-^FD$barcode
-^FS
+^CI27
 
 ^FX This is the first line
-^FO75,8
-^A0N,24,20
-^FB104,1,0,L,0
+^FO20,33
+^A@N,30,30,R:ARI003.TTF
+^FB370,1,0,L,0
 ^FD$name1
 ^FS
 
 ^FX This is the second line
-^FO75,35
-^A0N,24,20
-^FB104,1,0,L,0
+^FO20,80
+^A@N,30,30,R:ARI003.TTF
+^FB260,1,0,L,0
 ^FD$name2
 ^FS
 
 ^FX This is the horizontal line
-^FO75,62
-^GB115,2,2,B,0
+^FO10,130
+^GB270,2,2,B,0
 ^FS
 
 ^FX This is the date
-^FO75,70
-^A0N,24,24
-^FB104,1,0,C,0
-^FD$date\&
+^FO10,150
+^A@N,40,35,R:ARI004.TTF
+^FB270,1,0,C,0
+^FD2022-04-27\&
+^FS
+
+^FX This is the barcode
+^FO290,85
+^BXN,5,200
+^FD$barcode
 ^FS
 
 ^XZ
