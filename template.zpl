@@ -1,37 +1,48 @@
 ^XA
 
+^FX Enable accents etc
 ^CI27
+^FX Set print width
+^PW400
 
 ^FX This is the first line
 ^FO20,33
 ^A@N,30,30,R:ARI003.TTF
-^FB370,1,0,L,0
+^FB350,1,0,L,0
 ^FD$name1
 ^FS
 
 ^FX This is the second line
 ^FO20,80
 ^A@N,30,30,R:ARI003.TTF
-^FB260,1,0,L,0
+^FB350,1,0,L,0
 ^FD$name2
 ^FS
 
 ^FX This is the horizontal line
-^FO10,130
+^FO10,120
 ^GB270,2,2,B,0
 ^FS
 
 ^FX This is the date
-^FO10,150
-^A@N,40,35,R:ARI004.TTF
-^FB270,1,0,C,0
-^FD2022-04-27\&
+^FO370,10
+^A@B,25,17,R:ARI004.TTF
+^FB180,1,0,C,0
+^FD$due_date\&
 ^FS
 
 ^FX This is the barcode
-^FO290,85
-^BXN,5,200
+^FO40,130
+^BY1
+^BCN,50,Y,N
 ^FD$barcode
+^FS
+
+^FX This is the creation date
+^FO290,186
+^A@N,5,5,R:ARI003.TTF
+^FB150,1,0,L,0
+^FDPrinted: $print_date
 ^FS
 
 ^XZ
