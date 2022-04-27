@@ -1,6 +1,8 @@
 from datetime import datetime
 from string import Template
 
+import pendulum
+
 from src.product import Product
 
 
@@ -29,5 +31,9 @@ def generate_label(template: Template, product: Product, name_split: int) -> str
         name2 = product.name[name_split : name_split * 2]
 
     return template.substitute(
-        barcode=product.grocycode, name1=name1, name2=name2, date=due_date
+        barcode=product.grocycode,
+        name1=name1,
+        name2=name2,
+        due_date=due_date,
+        print_date=pendulum.now("Europe/Brussels").strftime("%d/%m/%y"),
     )
