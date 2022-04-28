@@ -21,7 +21,7 @@
 
 ^FX This is the horizontal line
 ^FO10,120
-^GB270,2,2,B,0
+^GB350,2,2,B,0
 ^FS
 
 ^FX This is the date
@@ -38,8 +38,8 @@
 ^FD$barcode
 ^FS
 
-^FX This is the creation date
-^FO290,186
+^FX This is the print date
+^FO10,186
 ^A@N,5,5,E:ARI003.TTF
 ^FB150,1,0,L,0
 ^FDPrinted: $print_date

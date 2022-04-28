@@ -21,7 +21,7 @@ def load_template(template_file: str) -> Template:
 def generate_label(template: Template, product: Product, name_split: int) -> str:
     due_date = product.due_date.split(" ")[-1]
     due_date = datetime.strptime(due_date, "%Y-%m-%d")
-    due_date = due_date.strftime("%d/%m/%y")
+    due_date = due_date.strftime("%d / %m / %y")
 
     if len(product.name) > name_split and product.name.count(" ") > 0:
         name1 = product.name.split(" ")[0][:name_split]
