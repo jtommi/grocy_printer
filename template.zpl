@@ -7,14 +7,14 @@
 
 ^FX This is the first line
 ^FO20,33
-^A@N,30,30,R:ARI003.TTF
+^A@N,30,30,E:ARI003.TTF
 ^FB350,1,0,L,0
 ^FD$name1
 ^FS
 
 ^FX This is the second line
 ^FO20,80
-^A@N,30,30,R:ARI003.TTF
+^A@N,30,30,E:ARI003.TTF
 ^FB350,1,0,L,0
 ^FD$name2
 ^FS
@@ -26,7 +26,7 @@
 
 ^FX This is the date
 ^FO370,10
-^A@B,25,17,R:ARI004.TTF
+^A@B,40,30,E:ARI004.TTF
 ^FB180,1,0,C,0
 ^FD$due_date\&
 ^FS
@@ -40,7 +40,7 @@
 
 ^FX This is the creation date
 ^FO290,186
-^A@N,5,5,R:ARI003.TTF
+^A@N,5,5,E:ARI003.TTF
 ^FB150,1,0,L,0
 ^FDPrinted: $print_date
 ^FS
