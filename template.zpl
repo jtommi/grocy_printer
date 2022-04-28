@@ -6,21 +6,21 @@
 ^PW400
 
 ^FX This is the first line
-^FO20,33
+^FO20,20
 ^A@N,30,30,E:ARI003.TTF
 ^FB350,1,0,L,0
 ^FD$name1
 ^FS
 
 ^FX This is the second line
-^FO20,80
+^FO20,60
 ^A@N,30,30,E:ARI003.TTF
 ^FB350,1,0,L,0
 ^FD$name2
 ^FS
 
 ^FX This is the horizontal line
-^FO10,120
+^FO10,100
 ^GB350,2,2,B,0
 ^FS
 
@@ -34,7 +34,7 @@
 ^FX This is the barcode
 ^FO40,130
 ^BY1
-^BCN,50,Y,N
+^BCN,70,Y,N
 ^FD$barcode
 ^FS
 
