@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  grocy_printer:
+    image: grocy_printer
+    container_name: grocy_printer
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
+    environment:
+      - CUPS_SERVER=cups
+    depends_on:
+      - cups
+
+  cups:
+    image: tigerj/cups-airprint:latest
+    container_name: cups
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+      - cups_config:/config
+      - cups_services:/services
+    devices:
+      - /dev/bus:/dev/bus
+      - /dev/usb:/dev/usb
+    environment:
+      - CUPSADMIN=print
+      - CUPSPASSWORD=print
+    ports:
+      - 631:631
+    restart: unless-stopped
+
+volumes:
+  cups_config:
+  cups_services:
