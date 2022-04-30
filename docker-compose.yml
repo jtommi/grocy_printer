@@ -11,6 +11,7 @@ services:
       - 8000:8000
     environment:
       - CUPS_SERVER=cups
+      - LINELENGTH=18
     depends_on:
       - cups
 

@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from zebra import Zebra
 
@@ -9,7 +11,7 @@ app = FastAPI()
 
 template = load_template("template.zpl")
 
-name_split = 11
+name_split = os.getenv("LINELENGTH", default=15)
 
 
 @app.post("/printer/product", status_code=201)

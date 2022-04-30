@@ -27,8 +27,13 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 RUN usermod -a -G lpadmin appuser
+# Set default cups server
+ENV CUPS_SERVER=cups
 
 USER appuser
+
+# Set default line length
+ENV LINELENGTH=15
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
 CMD ["uvicorn", "--host", "0.0.0.0", "--port", "8000", "main:app"]
