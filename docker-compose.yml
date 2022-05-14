@@ -12,6 +12,7 @@ services:
     environment:
       - CUPS_SERVER=cups
       - LINELENGTH=18
+      - PRINTER=zebra
     depends_on:
       - cups
 
