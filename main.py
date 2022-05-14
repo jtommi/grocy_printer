@@ -11,7 +11,7 @@ app = FastAPI()
 
 template = load_template("template.zpl")
 
-name_split = os.getenv("LINELENGTH", default=15)
+name_split = int(os.getenv("LINELENGTH", default=15))
 
 
 @app.post("/printer/product", status_code=201)
