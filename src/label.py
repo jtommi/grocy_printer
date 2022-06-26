@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 from string import Template
 
@@ -30,10 +31,11 @@ def generate_label(template: Template, product: Product, name_split: int) -> str
         name1 = product.name[:name_split]
         name2 = product.name[name_split : name_split * 2]
 
+    tz = pendulum.timezone(os.getenv("TZ", "UTC"))
     return template.substitute(
         barcode=product.grocycode,
         name1=name1,
         name2=name2,
         due_date=due_date,
-        print_date=pendulum.now("Europe/Brussels").strftime("%d/%m/%y"),
+        print_date=datetime.now(tz).strftime("%d/%m/%y"),
     )
