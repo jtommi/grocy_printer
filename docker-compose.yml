@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   grocy_printer:
     image: local/grocy_printer:latest
