@@ -26,7 +26,7 @@ def generate_label(template: Template, product: Product, name_split: int) -> str
 
     if len(product.name) > name_split and product.name.count(" ") > 0:
         name1 = product.name.split(" ")[0][:name_split]
-        name2 = "".join(product.name.split(" ")[1:])[:name_split]
+        name2 = " ".join(product.name.split(" ")[1:])[:name_split]
     else:
         name1 = product.name[:name_split]
         name2 = product.name[name_split : name_split * 2]
