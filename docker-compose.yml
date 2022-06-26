@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   grocy_printer:
-    image: grocy_printer
+    image: local/grocy_printer:latest
     container_name: grocy_printer
     build:
       context: .
