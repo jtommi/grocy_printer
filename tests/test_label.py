@@ -46,3 +46,18 @@ class TestLabel(unittest.TestCase):
         self.assertIn("Very", label)
         self.assertIn("Long Bread", str(label))
         self.assertNotIn("Very Long Bread", label)
+
+    def test_generate_label_splits_name_without_spaces(self):
+        product = Product(
+            product="VeryVeryVeryLongBread",
+            grocycode="12345",
+            font_family="Arial",
+            due_date="2020-01-01",
+        )
+
+        template = load_template("tests/files/test_substitution_template.zpl")
+
+        label = generate_label(template, product, 10)
+        self.assertIn("VeryVeryVe", label)
+        self.assertIn("ryLongBrea", str(label))
+        self.assertNotIn("ryLongBread", label)
