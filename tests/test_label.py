@@ -1,5 +1,5 @@
 import unittest
-import pendulum
+from pendulum.tz import timezone
 import os
 from src.label import load_template, generate_label
 from src.product import Product
@@ -28,7 +28,7 @@ class TestLabel(unittest.TestCase):
         self.assertIn("12345", label)
         self.assertIn(due_date.strftime("%d / %m / %y"), label)
 
-        tz = pendulum.timezone(os.getenv("TZ", "UTC"))
+        tz = timezone(os.getenv("TZ", "UTC"))
         today = datetime.now(tz).strftime("%d/%m/%y")
         self.assertIn(today, label)
 
