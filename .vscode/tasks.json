@@ -5,7 +5,8 @@
     "tasks": [
         {
             "label": "Run test coverage",
-            "command": "${config:python.pythonPath}",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
             "args": [
                 "-m",
                 "coverage",
@@ -18,7 +19,8 @@
         },
         {
             "label": "Generate test coverage lcov file",
-            "command": "${config:python.pythonPath}",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
             "args": [
                 "-m",
                 "coverage",
@@ -31,7 +33,8 @@
         },
         {
             "label": "Generate test coverage report",
-            "command": "${config:python.pythonPath}",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
             "args": [
                 "-m",
                 "coverage",
