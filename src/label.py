@@ -3,8 +3,12 @@ from datetime import datetime
 from string import Template
 
 from pendulum.tz import timezone
+from pydantic import BaseModel
 
 from src.product import Product
+
+class Label(BaseModel):
+    content: str
 
 
 def load_template(template_file: str) -> Template:
