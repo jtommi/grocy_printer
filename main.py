@@ -34,6 +34,12 @@ printer_name = os.getenv("PRINTER", default="zebra")
 
 printer = Zebra(printer_name)
 
+@app.post("/printer/label", status_code=201)
+async def print_label(label: str):
+    printer.output(label)
+
+    return {"zpl": label}
+
 
 @app.post("/printer/product", status_code=201)
 async def print_product(product: Product):
