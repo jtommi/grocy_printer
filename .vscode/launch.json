@@ -12,9 +12,7 @@
             "justMyCode": true,
             "args": [
                 "main:app",
-                "--reload",
-                "--host",
-                "dev.home"
+                "--reload"
             ],
             "env": {
                 "PYTHONUNBUFFERED": "1"
