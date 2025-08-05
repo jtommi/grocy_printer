@@ -14,10 +14,11 @@
                 "main:app",
                 "--reload",
                 "--host",
-                "0.0.0.0"
+                "127.0.0.1"
             ],
             "env": {
-                "PYTHONUNBUFFERED": "1"
+                "PYTHONUNBUFFERED": "1",
+                "DEV": "1"
             },
             "console": "integratedTerminal"
         }

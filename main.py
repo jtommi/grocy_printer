@@ -42,7 +42,8 @@ printer = Zebra(printer_name)
     response_model=ZPL,
 )
 async def print_label(label: Label):
-    printer.output(label.content)
+    if not os.getenv("DEV", False):
+        printer.output(label.content)
 
     return ZPL(zpl=label.content)
 
@@ -58,7 +59,8 @@ async def print_label(label: Label):
 async def print_product(product: Product):
     label = generate_label(template, product, name_split)
 
-    printer.output(label)
+    if not os.getenv("DEV", False):
+        printer.output(label)
 
     return ZPL(zpl=label)
 
