@@ -2,13 +2,17 @@ from datetime import datetime
 from string import Template
 
 import pendulum
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from src.product import Product
 
 
 class Label(BaseModel):
-    content: str
+    content: str = Field(title="The ZPL content to be printed.")
+
+
+class ZPL(BaseModel):
+    zpl: str = Field(title="The ZPL content of the label.")
 
 
 def load_template(template_file: str) -> Template:

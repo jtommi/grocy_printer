@@ -6,7 +6,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from zebra import Zebra
 
-from src.label import generate_label, Label, load_template
+from src.label import ZPL, Label, generate_label, load_template
 from src.product import Product
 
 # Configure logging
@@ -34,20 +34,33 @@ printer_name = os.getenv("PRINTER", default="zebra")
 
 printer = Zebra(printer_name)
 
-@app.post("/printer/label", status_code=201)
+
+@app.post(
+    "/printer/label",
+    status_code=201,
+    response_description="The printed ZPL code.",
+    response_model=ZPL,
+)
 async def print_label(label: Label):
     printer.output(label.content)
 
-    return {"zpl": label}
+    return ZPL(zpl=label.content)
 
 
-@app.post("/printer/product", status_code=201)
+@app.post(
+    "/printer/product",
+    status_code=201,
+    summary="Print a product label for Grocy.",
+    description="Prints a product label using the provided product data and returns the generated ZPL code.",
+    response_description="The printed ZPL code.",
+    response_model=ZPL,
+)
 async def print_product(product: Product):
     label = generate_label(template, product, name_split)
 
     printer.output(label)
 
-    return {"zpl": label}
+    return ZPL(zpl=label)
 
 
 @app.exception_handler(RequestValidationError)
